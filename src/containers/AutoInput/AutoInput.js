@@ -1,6 +1,7 @@
 import React , {Component} from 'react';
 import './AutoInput.css';
 import Point from './point.svg'
+import Add from '../../plus.svg'
 
 
 const cities = [
@@ -55,7 +56,7 @@ class AutoInput extends Component{
       }
       
     closeMenu(event) {
-        if (!this.suggests.contains(event.target)) {
+        if (this.suggests!==null && !this.suggests.contains(event.target)) {
           this.setState({ visible: false }, () => {
             document.removeEventListener('click', this.closeMenu);
           });  
@@ -67,6 +68,8 @@ class AutoInput extends Component{
             <div className="auto-input" ref={(element) => {this.suggests = element;}}>
                 <label className="auto-input-lbl">{this.props.label}</label>
                 <input className="auto-input-inp" ref={(element) => {this.input = element;}} onClick={this.menuExpanded} onChange={this.onChange}></input>
+                { this.props.removable ? <div className="remove add" id={this.props.id} onClick={this.props.handleRemove}>Remove</div> : null}
+                { this.props.canAdd ? <div className="icon add" onClick={this.props.handleAdd}><img alt="add" src={Add}></img></div> : null}
                 {
                 this.state.visible
                     ? 

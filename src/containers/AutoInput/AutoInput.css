@@ -66,3 +66,45 @@
 .suggests-item:hover{
     background-color: rgb(242, 242, 242) !important;
 }
+.icon{
+    width: 28px;
+    height:28px;
+    position: absolute;
+    right:15px;
+    top:0;
+    background-color: white;
+    border-radius: 50%;
+    transform:translateY(-50%);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    cursor:pointer;
+    filter:grayscale(1);
+}
+
+.icon:hover{
+    filter:grayscale(0);
+}
+.icon img{
+    width: 25px;
+    height: 25px;
+    /*user-drag: none;*/
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.remove{
+    opacity: 0.6;
+    position: absolute;
+    top:50%;
+    right: 50px;
+    transform: translateY(-50%);
+    font-size: 11px;
+    cursor:pointer;
+}
+.remove:hover{
+    opacity: 0.9;
+}
