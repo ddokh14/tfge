@@ -1,0 +1,17 @@
+.filter{
+    width: 100%;
+    padding-bottom:30px;
+    background-color: white;
+    height: calc(100% - 175px);
+    overflow-y: auto;
+}
+.flag {
+    width:25px;
+    height:25px;
+    /*user-drag: none;*/ 
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
